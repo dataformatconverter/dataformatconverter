@@ -1,0 +1,39 @@
+{
+  "name": "dataformatconverter",
+  "version": "0.1.0",
+  "description": "Convert between JSON, JSON Lines, CSV, XML, YAML and XLSX, and compare JSON documents with array matching and JSON Patch output.",
+  "keywords": ["json", "csv", "xml", "yaml", "xlsx", "ndjson", "json-lines", "converter", "json-diff", "json-patch"],
+  "homepage": "https://dataformatconverter.com",
+  "bugs": "https://github.com/dataformatconverter/dataformatconverter/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dataformatconverter/dataformatconverter.git",
+    "directory": "packages/npm"
+  },
+  "license": "MIT",
+  "author": "Aleksandr Evtushenko",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    }
+  },
+  "types": "./index.d.ts",
+  "files": ["index.js", "index.d.ts", "lib"],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "prepare-files": "node prepare.mjs",
+    "prepack": "node prepare.mjs",
+    "test": "node prepare.mjs && node --test test.mjs"
+  },
+  "dependencies": {
+    "fast-xml-parser": "^5.12.0",
+    "fflate": "^0.8.3",
+    "js-yaml": "^5.5.0",
+    "papaparse": "^5.7.0"
+  }
+}

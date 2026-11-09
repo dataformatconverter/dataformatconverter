@@ -2,3 +2,10 @@ node_modules/
 dist/
 .wrangler/
 .env
+.vscode-test/
+*.vsix
+*.tgz
+packages/npm/lib/
+packages/npm/LICENSE
+packages/vscode/LICENSE
+packages/vscode/THIRD_PARTY_NOTICES.txt

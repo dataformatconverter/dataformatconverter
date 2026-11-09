@@ -1,0 +1,48 @@
+{
+  "name": "data-format-converter",
+  "displayName": "Data Format Converter",
+  "description": "Convert JSON, JSON Lines, CSV, XML, YAML and XLSX inside VS Code, and compare JSON files with array matching and JSON Patch output. Runs locally.",
+  "version": "0.1.0",
+  "publisher": "dataformatconverter",
+  "license": "MIT",
+  "icon": "icon.png",
+  "homepage": "https://dataformatconverter.com",
+  "bugs": "https://github.com/dataformatconverter/dataformatconverter/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dataformatconverter/dataformatconverter.git",
+    "directory": "packages/vscode"
+  },
+  "keywords": ["json", "csv", "xml", "yaml", "xlsx", "ndjson", "converter", "json diff", "json patch"],
+  "categories": ["Other"],
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "main": "./dist/extension.cjs",
+  "capabilities": {
+    "untrustedWorkspaces": { "supported": true },
+    "virtualWorkspaces": true
+  },
+  "contributes": {
+    "commands": [
+      { "command": "dataFormatConverter.jsonToCsv", "title": "JSON to CSV", "category": "Data Format" },
+      { "command": "dataFormatConverter.csvToJson", "title": "CSV to JSON", "category": "Data Format" },
+      { "command": "dataFormatConverter.xmlToJson", "title": "XML to JSON", "category": "Data Format" },
+      { "command": "dataFormatConverter.jsonToXml", "title": "JSON to XML", "category": "Data Format" },
+      { "command": "dataFormatConverter.yamlToJson", "title": "YAML to JSON", "category": "Data Format" },
+      { "command": "dataFormatConverter.jsonToYaml", "title": "JSON to YAML", "category": "Data Format" },
+      { "command": "dataFormatConverter.csvToXlsx", "title": "CSV to XLSX", "category": "Data Format" },
+      { "command": "dataFormatConverter.compare", "title": "Compare JSON", "category": "Data Format" },
+      { "command": "dataFormatConverter.patch", "title": "Create JSON Patch", "category": "Data Format" }
+    ]
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "test": "node build.mjs && node test/run.mjs",
+    "package": "node build.mjs && vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@vscode/test-electron": "^2.5.2",
+    "@vscode/vsce": "^3.6.0"
+  }
+}
